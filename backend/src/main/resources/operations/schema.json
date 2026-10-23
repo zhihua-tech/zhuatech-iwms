@@ -1,0 +1,92 @@
+{
+  "slug": "iwms",
+  "title": "公共面积分摊与租赁全成本测算",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "exclusiveArea",
+      "label": "本单元独占面积㎡",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "totalExclusive",
+      "label": "总独占面积㎡",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0.000001",
+      "max": "1000000000000"
+    },
+    {
+      "key": "commonArea",
+      "label": "公共面积㎡",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "rentRate",
+      "label": "每㎡月租",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "serviceRate",
+      "label": "每㎡服务费",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "allocatedCommonArea",
+      "label": "分摊公共面积㎡"
+    },
+    {
+      "key": "chargeableArea",
+      "label": "情景计费面积㎡"
+    },
+    {
+      "key": "rentAmount",
+      "label": "候选租赁费"
+    },
+    {
+      "key": "serviceAmount",
+      "label": "候选服务费"
+    },
+    {
+      "key": "monthlyTotal",
+      "label": "候选月总费"
+    }
+  ],
+  "description": "根据独占面积和总独占面积分摊公共面积，叠加租赁及服务费率，输出可核对的单空间全成本。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "exclusiveArea": "100",
+        "totalExclusive": "500",
+        "commonArea": "200",
+        "rentRate": "50",
+        "serviceRate": "10"
+      }
+    ]
+  }
+}

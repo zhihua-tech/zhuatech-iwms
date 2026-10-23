@@ -1,0 +1,44 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "allocatedCommonArea": "#40",
+      "chargeableArea": "#140",
+      "monthlyTotal": "#8400"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "exclusiveArea": "0"
+    },
+    "expected": {
+      "monthlyTotal": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "exclusiveArea": "501"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "totalExclusive": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "commonArea": "0"
+    },
+    "expected": {
+      "monthlyTotal": "#6000"
+    },
+    "error": false
+  }
+]
